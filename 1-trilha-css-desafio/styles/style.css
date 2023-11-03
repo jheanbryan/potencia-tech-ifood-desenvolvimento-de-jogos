@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: raleway;
+}
+:root{
+    --azul-normal: #31A8DD;
+    --gradient-azul: linear-gradient(180deg, #33A8DB 0%, #1472B7 100%);
+}
+.container-trilha-css{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.50)0%, rgba(51, 168, 219, 0.15)50%, rgba(0, 0, 0, 0.08)100%), url('../assets/fundo.png');
+    padding: 30px;
+}
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 510px;
+    margin-inline: auto;
+    gap: 20px;
+}
+.container-img{
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: 248px;
+    border-radius: 50%;
+}
+.img{
+    width: 100%;
+}
+.info-trilha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.info-trilha h1{
+    background: var(--gradient-azul);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+.info-trilha p{
+    color: white;
+}
+
+.btn-inscrever{
+    text-transform: uppercase;
+    padding: 10px;
+    max-width: 326px;
+    background-color: none;
+    color: var(--azul-normal);
+    border: 1px solid var(--azul-normal);
+
+
+    text-align: center;
+    margin-inline: auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
