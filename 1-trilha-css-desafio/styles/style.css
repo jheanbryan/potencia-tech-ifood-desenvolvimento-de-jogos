@@ -6,11 +6,15 @@
 }
 :root{
     --azul-normal: #31A8DD;
+    --azul-secundario: rgba(51, 168, 219, 1);
+    --bg-color: black;
+    --bg-color-list-item: rgba(37, 37, 37, 1);
     --gradient-azul: linear-gradient(180deg, #33A8DB 0%, #1472B7 100%);
 }
+
 .container-trilha-css{
     background-image: linear-gradient(rgba(0, 0, 0, 0.50)0%, rgba(51, 168, 219, 0.15)50%, rgba(0, 0, 0, 0.08)100%), url('../assets/fundo.png');
-    padding: 30px;
+    padding: 50px;
 }
 .banner-content{
     display: flex;
@@ -41,9 +45,14 @@
     -webkit-background-clip: text;
     color: transparent;
     text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 900;
 }
 .info-trilha p{
     color: white;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23.48px;
 }
 
 .btn-inscrever{
@@ -53,10 +62,77 @@
     background-color: none;
     color: var(--azul-normal);
     border: 1px solid var(--azul-normal);
-
-
     text-align: center;
     margin-inline: auto;
     margin-top: 30px;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 16px;
+}
+
+
+.container-oque-aprender{
+    background-color: var(--bg-color);
+    color: white;
+    padding: 50px;
+    border-top: 1px solid var(--azul-normal);
+
+}
+.oque-aprender{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 792px;
+    margin-inline: auto;
+}
+.oque-aprender h1{
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--azul-secundario);
+    text-transform: uppercase;
+}
+.oque-aprender p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.78px;
+    text-align: center;
+}
+.oque-aprender ul{
+    list-style: none;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.oque-aprender ul li{
+    border: 1px solid var(--azul-secundario);
+    background-color: var(--bg-color-list-item);
+    border-radius: 57px;
+    padding: 16px 127px 16px 127px;
+    text-align: center;
+}
+.oque-aprender ul li span{
+    color: var(--azul-secundario);
+}
+
+
+
+.container-transforme-o-mundo{
+    border-top: 1px solid var(--azul-secundario);
+    background-image: url(../assets/woman-code.png);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 560px;
+    padding: 150px;
+    display: flex;
+    background-color: black;
+}
+.container-transforme-o-mundo p{
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+    max-width: 244px;
+    text-shadow: 3px 2px 1px var(--azul-secundario);
 }
