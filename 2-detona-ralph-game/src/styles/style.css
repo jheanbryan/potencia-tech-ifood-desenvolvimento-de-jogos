@@ -12,7 +12,7 @@ main{
     background-color: #000000;
 }
 
-.menu div {
+.menu-time, .menu-score {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,10 +26,11 @@ main{
 }
 .menu-lives{
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 5px;
 }
 .img-player{
-    width: 80px;
+    width: 60px;
 }
 .panel{
     margin-top: 1rem;
@@ -46,5 +47,5 @@ main{
 .enemy{
     background-image: url("../images/ralph.png");
     background-size: cover;
-    back
+    cursor: pointer;
 }
