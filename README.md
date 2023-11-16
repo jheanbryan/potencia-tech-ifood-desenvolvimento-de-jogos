@@ -3,4 +3,6 @@
 
 - [1-trilha-css-desafio (Primeiro desafio com HTML e CSS)](https://1-trilha-css-desafio.netlify.app)
 
-- [1-detona-ralph-game (Jogo do Detona Ralph)](https://detona-ralph-game.netlify.app)
+- [2-detona-ralph-game (Jogo do Detona Ralph)](https://detona-ralph-game.netlify.app)
+
+- [3-jogo-da-memoria (Jogo da Memória)](https://jog-memoria.netlify.app)
