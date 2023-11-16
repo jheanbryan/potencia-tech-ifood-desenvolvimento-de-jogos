@@ -3,8 +3,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     background-color: #fc1e8a;
+    max-height: 100vh;
 }
 main{
     background: linear-gradient(
@@ -50,8 +50,21 @@ h2{
     justify-content: center;
     font-size: 3em;
     transform: rotateY(180deg);
-    transition: 0.2s;
+    transition: 0.5s;
+    user-select: none;
 }
+
+.item::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: #404040;
+    transition: 0.5s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+
 .reset{
     padding: 15px;
     width: 100%;
@@ -64,4 +77,12 @@ h2{
 .reset:focus{
     color: #ec38bc;
     background-color: #262809;
+}
+
+.item.boxOpen{
+    transform: rotateY(0);
+}
+.boxOpen::after, .boxMatch::after
+{
+    transform: rotateY(180deg);
 }
