@@ -1,0 +1,115 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e3f2fd;
+}
+main{
+    width: 780px;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid red;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    color: #b2b2b2;
+    display: flex;
+    justify-content: space-between;
+}
+header h2{
+    font-size: 1.6rem;
+}
+.column{
+    display: flex;
+    align-items: center;
+}
+.column span{
+    font-weight: 500;
+    margin-right: 15px;
+    font-size: 1.19rem;
+}
+.input-volume{
+    line-height: 200px;
+}
+.keys-check input{
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #4b4b4b;
+    cursor: pointer;
+    position: relative;
+}
+.keys-check input::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #8c8c8c;
+    position: absolute;
+    border-radius: inherit;
+    margin-inline: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+
+}
+.keys-check input:checked::before{
+    left: 2.1rem;
+    background-color: #fff;
+}
+
+.piano-keys{
+    display: flex;
+    margin-top: 40px;
+    margin-inline: auto;
+}
+
+.key{
+    cursor: pointer;
+    list-style: none;
+    color: #a2a2a2;
+    user-select: none;
+    position: relative;
+    text-transform: uppercase;
+}
+.white{
+    width: 70px;
+    height: 230px;
+    background: linear-gradient(#fff 96%, #eee 4%);
+    border-radius: 8px;
+}
+.black{
+    width: 44px;
+    height: 140px;
+    margin: 0 -22px 0 -22px;
+    background: linear-gradient(#333, #000);
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+}
+.key span{
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2em;
+}
+.white.active{
+    box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+        top bottom #fff 0%, #eee 100%
+    )
+}
+.black.active{
+    box-shadow: inset -5px 5px 20px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+        top bottom #000 #434343
+    )
+}
+.hide span{
+    display: none;
+}
