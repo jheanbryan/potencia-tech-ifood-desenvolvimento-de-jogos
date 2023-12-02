@@ -36,9 +36,11 @@ body{
 .container-left{
     width: 35%;
     min-width: 300px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    
 }
 .container-right{
     width: 65%;
@@ -53,19 +55,30 @@ body{
 }
 .card-details{
     background-color: #fff;
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 6rem;
+    height: 6.5rem;
 }
-.card-name{
-    font-size: 0.8rem;
+.menu-avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#card-image{
+    text-align: center;
 }
 
-.card-type{
+#card-name{
     font-size: 1rem;
+    text-align: center;
+}
+
+#card-type{
+    font-size: 0.8rem;
+    word-wrap: break-word;
 }
 
 .card-box-container{
@@ -99,4 +112,9 @@ body{
     height: 11.2rem;
     width: 8rem;
     border: 1px solid #fff;
+}
+.card:hover{
+    transform: scale(1.2);
+    transition: 0.8s;
+    cursor: pointer;
 }
