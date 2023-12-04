@@ -85,7 +85,6 @@ async function drawSelectCard(index){
 }
 
 async function setCardsField(cardId){
-    console.log('ona')
     await removeAllCards();
 
     let computerCardId = await getRandomCardId()
@@ -93,13 +92,41 @@ async function setCardsField(cardId){
     states.fieldCards.player.style.display = 'block';
     states.fieldCards.computer.style.display = 'block';
 
+
     states.fieldCards.player.src = cardData[cardId].img;
     states.fieldCards.computer.src = cardData[computerCardId].img;
 
-    //let duelResults = await checkDuelResults(cardId, computerId)
+    let duelResults = await checkDuelResults(cardId, computerCardId)
 
-    //await updateScore();
-    //await drawButton(duelResults);
+    await updateScore();
+    await drawButton(duelResults);
+}
+
+async function updateScore(){
+    states.score.scoreBox.innerText = `Win: ${states.score.playerScore} | Lose: ${states.score.computerScore}`
+}
+
+async function drawButton(text){
+    states.button.innerText = text;
+    states.button.style.display = 'block';
+}
+
+async function checkDuelResults(playerCardId, computerCardId){
+    let duelResults = 'draw';
+    let playerCard = cardData[playerCardId]
+
+    if (playerCard.winOf.includes(computerCardId)){
+        duelResults = 'win';
+        await playAudio('win');
+        states.score.playerScore++;
+    }
+    if (playerCard.loseOf.includes(computerCardId)){
+        duelResults = 'lose';
+        await playAudio('lose');
+        states.score.computerScore++;
+    }
+
+    return duelResults;
 }
 
 async function removeAllCards(){
@@ -127,10 +154,37 @@ async function drawCards(cardNumber, fieldSide){
     }
 }
 
+async function resetDuel(){
+    await cleanCardDetails();
+
+    states.button.style.display = 'none';
+    states.fieldCards.player.style.display = 'none';
+    states.fieldCards.computer.style.display = 'none';
+
+    init();
+
+}
+
+async function cleanCardDetails(){
+    states.cardsSprites.avatar.src = '';
+    states.cardsSprites.name.innerText = 'Selecione uma carta'
+    states.cardsSprites.type.innerText = 'Selecione uma carta'
+}
+
+async function playAudio(status){
+    const audio = new Audio(`./src/assets/audios/${status}.wav`);
+
+    try {
+        audio.play();   
+    } catch{}
+}
+
 function init(){
     drawCards(5, playerSides.player1);
     drawCards(5, playerSides.computer);
 
+    const bgm = document.getElementById('bgm');
+    bgm.play();
 }
 
 

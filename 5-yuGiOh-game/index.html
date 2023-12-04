@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YuGiOh Game</title>
+
+    <!--FavIcon-->
+    <link rel="shortcut icon" href="src/assets/favicon/Favicon.ico" type="image/x-icon">
 
     <!--CSS-->
     <link rel="stylesheet" href="src/styles/reset.css">
@@ -18,6 +21,9 @@
 
 </head>
 <body>
+    <audio id="bgm" loop>
+        <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3" />
+    </audio>
     <div class="bg-video">
         <video class="video" autoplay loop muted>
             <source src="./src/assets/video/yugi.mp4" type="video/mp4">
@@ -55,19 +61,19 @@
                 <div class="card-versus-container">
                     <div class="versus-top">
                         <div class="card-infield">
-                            <img id="player-field-card" height="180px" width="125px">
+                            <img id="player-field-card">
                         </div>
 
                         <img src="src/assets/icons/millenium2.png" alt="" height="100px">
 
                         <div class="card-infield">
-                            <img id="computer-field-card" height="180px" width="125px">
+                            <img id="computer-field-card">
                         </div>
                     </div>
 
 
                     <div class="versus-bottom">
-                        <button id="next-duel" class="rpgui-button" oncanplay="resetDuel()">Ganhou</button>
+                        <button id="next-duel" class="rpgui-button btn" onclick="resetDuel()">Ganhou</button>
                     </div>
                 </div>
 
